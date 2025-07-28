@@ -24,9 +24,17 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
+        <action id="RoboticChatAction"
+                class="io.embry.robotic.action.RoboticChatAction"
+                text="Robotic Chat"
+                description="Performs my custom action">
+        </action>
+
         <toolWindow id="Robotic"
                     factoryClass="io.embry.robotic.toolwindow.RoboticToolWindowFactory"
                     anchor="right"
-                    icon="AllIcons.Actions.EnableNewUi"/>
+                    icon="AllIcons.Actions.EnableNewUiSelected"/>
+
+        <applicationService serviceImplementation="io.embry.robotic.service.RoboticService"/>
     </extensions>
 </idea-plugin>

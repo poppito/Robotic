@@ -5,10 +5,6 @@ import com.intellij.openapi.wm.ToolWindow
 import com.intellij.openapi.wm.ToolWindowFactory
 import com.intellij.ui.content.ContentFactory
 import io.embry.robotic.RoboticChatPanel
-import io.embry.robotic.services.RoboticService
-import javax.swing.JPanel
-import javax.swing.JLabel
-import javax.swing.BoxLayout
 
 class RoboticToolWindowFactory : ToolWindowFactory {
     override fun createToolWindowContent(project: Project, toolWindow: ToolWindow) {

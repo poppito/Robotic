@@ -15,6 +15,20 @@ class RoboticChatPanel(private val project: Project) : JPanel() {
     init {
         layout = BorderLayout()
 
+        // Top panel with settings icon
+        val topPanel = JPanel(FlowLayout(FlowLayout.TRAILING))
+        val settingsIconUrl = javaClass.getResource("/icons/settings.svg") // Use your icon path
+        val settingsIcon = ImageIcon(settingsIconUrl)
+        val settingsButton = JButton(settingsIcon)
+        settingsButton.isContentAreaFilled = true
+        settingsButton.isBorderPainted = true
+        settingsButton.toolTipText = "Robotic Settings"
+        settingsButton.addActionListener {
+            RoboticSettingsDialog(project).isVisible = true
+        }
+        topPanel.add(settingsButton)
+        add(topPanel, BorderLayout.NORTH)
+
         // Chat area (non-editable)
         chatArea.isEditable = false
         chatArea.lineWrap = true
